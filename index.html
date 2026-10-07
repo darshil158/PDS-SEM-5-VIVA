@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Python for Data Science BE05000231 viva questions and answers">
+  <meta name="theme-color" content="#070a12">
+  <title>PDS Viva — BE05000231</title>
+  <link rel="icon" href="assets/icons/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div class="ambient ambient-a" aria-hidden="true"></div>
+  <div class="ambient ambient-b" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="PDS Viva home">
+      <span class="brand-mark">P</span>
+      <span class="brand-copy"><strong>PDS VIVA</strong><small>BE05000231</small></span>
+    </a>
+    <button id="menu" class="menu-button" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="nav">☰</button>
+    <nav id="nav" aria-label="Primary navigation">
+      <a href="#home">Home</a>
+      <a href="#top20">Top 20</a>
+      <a href="#units">Units</a>
+      <a href="#important">Important</a>
+      <a href="#low">Low Priority</a>
+      <a href="#tricky">Tricky</a>
+      <a href="#rapid">Rapid Fire</a>
+      <a href="#revision">Revision</a>
+      <a href="#quiz">Quiz</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero wrap">
+      <div class="hero-copy">
+        <p class="eyebrow">SEMESTER 5 · PYTHON FOR DATA SCIENCE</p>
+        <h1>VIVA<br><em>PREPARATION</em></h1>
+        <p class="hero-text">Question + answer preparation built from the approved PDS Q&A bank and restricted to the official BE05000231 syllabus.</p>
+        <div class="hero-actions">
+          <button class="button primary" id="start" type="button">Start Viva →</button>
+          <a class="button secondary" href="#revision">Last-minute Revision</a>
+        </div>
+        <div class="hero-meta"><span>7 Units</span><span>45 Hours</span><span>2026–27</span><span>Answers Always Visible</span></div>
+      </div>
+      <div class="orb" aria-hidden="true">
+        <i></i><i></i>
+        <div><strong>PY</strong><small>VIVA</small></div>
+      </div>
+    </section>
+
+    <section class="stats wrap" aria-label="Question statistics">
+      <article><span>Total Questions</span><strong id="total">0</strong><small>Approved unique Q&A</small></article>
+      <article><span>Studied</span><strong id="done">0</strong><small>Saved locally</small></article>
+      <article><span>Remaining</span><strong id="remain">0</strong><small>Not marked studied</small></article>
+      <article class="hot"><span>High Priority</span><strong id="high">0</strong><small>🔥 Must know</small></article>
+    </section>
+
+    <section class="wrap dashboard" aria-labelledby="progress-title">
+      <div class="section-heading compact-heading">
+        <div><p class="eyebrow">STUDY CONTROL</p><h2 id="progress-title">Your progress</h2></div>
+        <span>Stored in this browser</span>
+      </div>
+      <div class="progress-panel">
+        <div class="progress-head"><span>Overall completion</span><strong id="pct">0%</strong></div>
+        <div class="progress-track"><i id="overallFill"></i></div>
+        <div id="unitprog" class="unit-progress"></div>
+      </div>
+    </section>
+
+    <section id="top20" class="wrap section" aria-labelledby="top20-title">
+      <div class="section-heading"><div><p class="eyebrow">🔥 PRIORITY ONE</p><h2 id="top20-title">Top 20 Must-Know</h2><p>Start here if your viva is close.</p></div></div>
+      <div id="topGrid" class="question-grid"></div>
+    </section>
+
+    <section id="units" class="wrap section" aria-labelledby="units-title">
+      <div class="section-heading"><div><p class="eyebrow">OFFICIAL ORDER</p><h2 id="units-title">7 Syllabus Units</h2><p>Exact Unit 1 → Unit 7 order from BE05000231.</p></div></div>
+      <div id="unitsGrid" class="unit-grid"></div>
+    </section>
+
+    <section id="bank" class="wrap section" aria-labelledby="bank-title">
+      <div class="section-heading"><div><p class="eyebrow">FULL QUESTION BANK</p><h2 id="bank-title">Questions + Answers</h2><p>Every answer is shown. Nothing is hidden behind a reveal button or accordion.</p></div></div>
+      <div class="controls">
+        <label class="search-box"><span aria-hidden="true">⌕</span><input id="search" type="search" autocomplete="off" placeholder="Search question, answer, keyword, unit or topic…" aria-label="Search questions and answers"></label>
+        <select id="sort" aria-label="Sort questions">
+          <option value="number">Question order</option>
+          <option value="priority">Priority</option>
+          <option value="unit">Unit</option>
+          <option value="unanswered">Unanswered first</option>
+        </select>
+        <button class="button secondary" id="randomQ" type="button">Random Question</button>
+      </div>
+      <div id="filters" class="filters" aria-label="Question filters"></div>
+      <div class="bank-status"><span id="resultCount">0 questions</span><span id="savedCount">0 saved</span></div>
+      <div id="bankGrid" class="question-grid"></div>
+      <div id="empty" class="empty" hidden>No matching questions found.</div>
+    </section>
+
+    <section id="important" class="wrap section" aria-labelledby="important-title">
+      <div class="section-heading"><div><p class="eyebrow">⭐ IMPORTANT</p><h2 id="important-title">Important Viva Questions</h2><p>Medium-priority questions arranged by official unit.</p></div></div>
+      <div id="importantGrid"></div>
+    </section>
+
+    <section id="low" class="wrap section" aria-labelledby="low-title">
+      <div class="section-heading"><div><p class="eyebrow">🔹 POSSIBLE</p><h2 id="low-title">Low-Priority / Possible Questions</h2><p>Lower-priority questions from the approved bank.</p></div></div>
+      <div id="lowGrid"></div>
+    </section>
+
+    <section id="tricky" class="wrap section" aria-labelledby="tricky-title">
+      <div class="section-heading"><div><p class="eyebrow">⚠️ EXAMINER MODE</p><h2 id="tricky-title">Tricky Questions</h2><p>Common conceptual traps and examiner follow-ups.</p></div></div>
+      <div id="trickyGrid"></div>
+    </section>
+
+    <section id="rapid" class="wrap section" aria-labelledby="rapid-title">
+      <div class="section-heading"><div><p class="eyebrow">📌 SPEED ROUND</p><h2 id="rapid-title">Rapid Fire</h2><p>Short-answer practice using only questions already in the bank.</p></div></div>
+      <div id="rapidGrid"></div>
+    </section>
+
+    <section id="revision" class="wrap section" aria-labelledby="revision-title">
+      <div class="section-heading"><div><p class="eyebrow">🧠 LAST MINUTE</p><h2 id="revision-title">Revision Sheet</h2><p>One compact pass through the official syllabus.</p></div></div>
+      <div id="revisionGrid" class="revision-grid"></div>
+      <h3 class="subheading">Quick comparisons</h3>
+      <div id="comparisonGrid" class="comparison-grid"></div>
+    </section>
+
+    <section id="quiz" class="wrap section quiz" aria-labelledby="quiz-title">
+      <div class="section-heading"><div><p class="eyebrow">🎯 VIVA SIMULATOR</p><h2 id="quiz-title">Quiz Mode</h2><p>Randomizes only the approved question bank. The answer remains visible at all times.</p></div></div>
+      <article class="quiz-card">
+        <div class="quiz-top"><span id="qprogress">Question 0 / 0</span><strong id="score">Score: 0</strong></div>
+        <p id="quizUnit" class="quiz-unit">Press Start / Restart Quiz.</p>
+        <h3 id="quizQuestion">Start the quiz to begin.</h3>
+        <div id="quizAnswer" class="quiz-answer">Answers are always visible by design.</div>
+        <div id="quizKeywords" class="keyword-list"></div>
+        <div class="quiz-buttons">
+          <button class="button secondary" id="quizPrevious" type="button">← Previous</button>
+          <button class="button secondary" id="quizRandom" type="button">Random</button>
+          <button class="button success" id="quizCorrect" type="button" disabled>✓ Correct</button>
+          <button class="button danger" id="quizReview" type="button" disabled>↻ Need Revision</button>
+          <button class="button secondary" id="quizNext" type="button" disabled>Next →</button>
+        </div>
+        <button class="text-button" id="quizRestart" type="button">Start / Restart Quiz</button>
+        <p id="quizResult" class="quiz-result" aria-live="polite"></p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <div><strong>Python for Data Science</strong><span>BE05000231 · Semester 5 · Viva Preparation</span></div>
+    <span>Official syllabus boundary: BE05000231</span>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
